@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'groovy'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.mongodb:mongodb-driver:3.12.4'
+
+    implementation 'info.picocli:picocli:4.3.2'
+    annotationProcessor 'info.picocli:picocli-codegen:4.3.2'
+
+    // Use the latest Groovy version for Spock testing
+    testImplementation 'org.codehaus.groovy:groovy-all:2.5.10'
+    testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'
+    testImplementation 'junit:junit:4.12'
+}
+
+compileJava {
+    options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
+}
+
+application {
+    mainClassName = 'hands.on.mongodb.atlas.Application'
+}
+
+task kick(dependsOn: clean, group: 'build') {}
