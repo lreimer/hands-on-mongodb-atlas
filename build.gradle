@@ -25,7 +25,7 @@ compileJava {
 }
 
 application {
-    mainClassName = 'hands.on.mongodb.atlas.Application'
+    mainClassName = 'hands.on.mongodb.atlas.AtlasClient'
 }
 
 task kick(dependsOn: clean, group: 'build') {}
