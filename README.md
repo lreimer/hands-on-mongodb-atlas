@@ -8,7 +8,7 @@ Then configure the network access IP whitelist so you can connect to your DB ins
 
 ```bash
 $ ./gradlew kick ass
-
+$ ./gradlew run --args="--password <<YOUR PWD HERE>>"
 ```
 
 ## Maintainer
